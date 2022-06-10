@@ -37,3 +37,9 @@ save_website(url="https://httpbin.org/",
              delay=None, 
              threaded=False,
             )
+
+
+# Running Tests
+# Running tests is simple and doesn't require any external library. Just run this command from root directory of pywebcopy package.
+
+# python -m pywebcopy --tests
