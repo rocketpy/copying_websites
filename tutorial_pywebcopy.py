@@ -23,3 +23,17 @@ save_webpage(
       delay=None,
       threaded=False,
 )
+
+
+# To save full website (This could overload the target server, So, be careful) !!!
+from pywebcopy import save_website
+
+save_website(url="https://httpbin.org/",
+             project_folder="E://savedpages//",
+             project_name="my_site",
+             bypass_robots=True,
+             debug=True,
+             open_in_browser=True, 
+             delay=None, 
+             threaded=False,
+            )
