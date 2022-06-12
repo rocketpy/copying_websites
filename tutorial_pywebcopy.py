@@ -78,3 +78,27 @@ Options:
 
 """
 
+
+# Running tests
+# python -m pywebcopy run_tests
+
+
+# Authentication and Cookies
+"""
+Most of the time authentication is needed to access a certain page. Its real easy to authenticate with pywebcopy because it uses an requests. 
+Session object for base http activity which can be accessed through WebPage.session attribute.
+And as you know there are ton of tutorials on setting up authentication with requests.Session.
+"""
+
+# Here is an example to fill forms
+from pywebcopy.configs import get_config
+
+config = get_config('http://httpbin.org/')
+wp = config.create_page()
+wp.get(config['project_url'])
+form = wp.get_forms()[0]
+form.inputs['email'].value = 'bar' # etc
+form.inputs['password'].value = 'baz' # etc
+wp.submit_form(form)
+wp.get_links()
+
