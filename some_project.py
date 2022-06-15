@@ -32,7 +32,33 @@ def website(url, folder, name):
 
 print("""Choose a number:
 1 - Save page
-2 - Save page""")
+2 - Save site""")
 
-b=False	
+b = False
+while b==False:
+    try:
+	a = int(input())
+	if a==1 or a==2:
+	    b = True
+	else:
+	    warning("Choose the correct number!")
+    except:
+	   warning("Only numbers!")
+
+c = False
+
+while c==False:
+    url = input("Enter link: ")
+    if validators.url(url):
+	c = True
+    else:
+	warning("Incorrect link!")
+
+folder = input("Where to save: ")
+name = input("Project name: ")
+
+if a==1:
+    webpage(url, folder, name)
+else:
+    website(url, folder, name)
   
