@@ -102,3 +102,13 @@ form.inputs['password'].value = 'baz' # etc
 wp.submit_form(form)
 wp.get_links()
 
+
+# What can PyWebCopy not do?
+"""
+PyWebCopy does not include a virtual DOM or any form of JavaScript parsing.
+If a website makes heavy use of JavaScript to operate, it is unlikely PyWebCopy will be able to make a true copy if it is unable to discover
+all of the website due to JavaScript being used to dynamically generate links.
+
+PyWebCopy does not download the raw source code of a web site, it can only download what the HTTP server returns.
+While it will do its best to create an offline copy of a website, advanced data driven websites may not work as expected once they have been copied.
+"""
